@@ -58,5 +58,11 @@ public class QuantityTest {
         Inch inch=new Inch(0.0);
         Assert.assertNotEquals(inch,null);
     }
+    // TC:1.9
+    @Test
+    public void givenOfReferenceInchAndInch_ShouldReturnEqual() {
+        Inch inch=new Inch(0.0);
+        Assert.assertEquals(inch,inch);
+    }
 }
 
