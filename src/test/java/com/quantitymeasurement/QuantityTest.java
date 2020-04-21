@@ -55,8 +55,8 @@ public class QuantityTest {
     // TC:1.8
     @Test
     public void givenOf1NullInchObject_ShouldReturnNotEqual() {
-        Feet feet=new Feet(0.0);
-        Assert.assertNotEquals(feet,null);
+        Inch inch=new Inch(0.0);
+        Assert.assertNotEquals(inch,null);
     }
 }
 
