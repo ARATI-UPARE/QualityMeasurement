@@ -14,7 +14,7 @@ public class QuantityTest {
     }
     // TC:1.2
     @Test
-    public void givenOf1NullObject_ShouldReturnNotEqual() {
+    public void givenOf1NullFeetObject_ShouldReturnNotEqual() {
         Feet feet=new Feet(0.0);
         Assert.assertNotEquals(feet,null);
     }
@@ -52,4 +52,11 @@ public class QuantityTest {
         Inch inch2=new Inch(0.0);
         Assert.assertEquals(inch1,inch2);
     }
+    // TC:1.8
+    @Test
+    public void givenOf1NullInchObject_ShouldReturnNotEqual() {
+        Feet feet=new Feet(0.0);
+        Assert.assertNotEquals(feet,null);
+    }
 }
+
