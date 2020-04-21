@@ -30,4 +30,9 @@ public class QuantityTest {
         Feet feet=new Feet(0.0);
         Assert.assertEquals(feet,feet);
     }
+    @Test
+    public void givenStringAndFeet_whenDifferentType_shouldReturnNotEqual() {
+        Feet feet = new Feet(0.0);
+        Assert.assertNotEquals(feet, "Type");
+    }
 }
