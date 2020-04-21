@@ -18,4 +18,10 @@ public class QuantityTest {
         Feet feet2=new Feet(1.0);
         Assert.assertNotEquals(feet1,feet2);
     }
+    // TC:1.2
+    @Test
+    public void givenOf1NullObject_ShouldreturnFalse() {
+        Feet feet=new Feet(0.0);
+        Assert.assertNotEquals(feet,null);
+    }
 }
