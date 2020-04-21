@@ -40,29 +40,36 @@ public class QuantityTest {
     //TC:1.6
     @Test
     public void givenOf0FeetAnd1Feet_whenDifferentValues_ShouldreturnNotEqual() {
-        Feet feet1=new Feet(0.0);
-        Feet feet2=new Feet(1.0);
+        Feet feet1 = new Feet(0.0);
+        Feet feet2 = new Feet(1.0);
         Assert.assertNotEquals(feet1,feet2);
     }
 
     // TC:1.7
     @Test
     public void givenOf0InchAnd0Inch_ShouldReturnEqual() {
-        Inch inch1=new Inch(0.0);
-        Inch inch2=new Inch(0.0);
+        Inch inch1 = new Inch(0.0);
+        Inch inch2 = new Inch(0.0);
         Assert.assertEquals(inch1,inch2);
     }
     // TC:1.8
     @Test
     public void givenOf1NullInchObject_ShouldReturnNotEqual() {
-        Inch inch=new Inch(0.0);
+        Inch inch = new Inch(0.0);
         Assert.assertNotEquals(inch,null);
     }
     // TC:1.9
     @Test
     public void givenOfReferenceInchAndInch_ShouldReturnEqual() {
-        Inch inch=new Inch(0.0);
+        Inch inch = new Inch(0.0);
         Assert.assertEquals(inch,inch);
+    }
+    //TC:1.10
+    @Test
+    public void givenInchAndFeet_whenDifferentType_shouldReturnNotEqual() {
+        Feet feet = new Feet(0.0);
+        Inch inch = new Inch(0.0);
+        Assert.assertNotEquals(feet, inch);
     }
 }
 
