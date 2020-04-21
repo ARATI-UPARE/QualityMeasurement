@@ -37,5 +37,11 @@ public class QuantityTest {
         Feet feet2 = new Feet(0.0);
         Assert.assertEquals(feet1, feet2);
     }
-
+    //TC:1.6
+    @Test
+    public void givenOf0FeetAnd1Feet_whenDifferentValues_ShouldreturnNotEqual() {
+        Feet feet1=new Feet(0.0);
+        Feet feet2=new Feet(1.0);
+        Assert.assertNotEquals(feet1,feet2);
+    }
 }
