@@ -111,5 +111,13 @@ public class QuantityTest {
         boolean compareCheck = feet.compare(inch);
         Assert.assertTrue(compareCheck);
     }
+    //TC:1.16
+    @Test
+    public void given3FeetInchAnd1Yard_shouldReturnEqual() {
+        Length yard = new Length(Length.Unit.YARD, 1.0);
+        Length feet = new Length(Length.Unit.FEET, 3.0);
+        boolean compareCheck = yard.compare(feet);
+        Assert.assertTrue(compareCheck);
+    }
 }
 
