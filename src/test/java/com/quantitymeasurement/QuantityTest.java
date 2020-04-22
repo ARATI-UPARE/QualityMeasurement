@@ -97,12 +97,19 @@ public class QuantityTest {
     }
     //TC:1.14
     @Test
-    public void given1FeetAnd12Inch_shouldReturnNotEqual() {
+    public void given1FeetAnd12Inch_shouldReturnEqual() {
         Length inch = new Length(Length.Unit.INCH, 12.0);
         Length feet = new Length(Length.Unit.FEET, 1.0);
         boolean compareCheck = inch.compare(feet);
-        Assert.assertFalse(compareCheck);
+        Assert.assertTrue(compareCheck);
     }
-
+    //TC:1.15
+    @Test
+    public void given12InchAnd1Feet_shouldReturnEqual() {
+        Length inch = new Length(Length.Unit.INCH, 12.0);
+        Length feet = new Length(Length.Unit.FEET, 1.0);
+        boolean compareCheck = feet.compare(inch);
+        Assert.assertTrue(compareCheck);
+    }
 }
 

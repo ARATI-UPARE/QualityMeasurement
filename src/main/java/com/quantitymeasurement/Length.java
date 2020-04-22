@@ -19,7 +19,9 @@ public class Length {
         if(this.unit.equals(Unit.FEET) && that.unit.equals(Unit.INCH)) {
             return Double.compare(this.value * FEET_TO_INCH, that.value) == 0;
         }
-        return false;
+        if(this.unit.equals(Unit.INCH) && that.unit.equals(Unit.FEET))
+            return Double.compare(this.value / FEET_TO_INCH, that.value) == 0;
+        return this.equals(that);
     }
 
     @Override
