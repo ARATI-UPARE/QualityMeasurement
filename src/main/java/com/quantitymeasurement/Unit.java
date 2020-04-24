@@ -6,10 +6,10 @@ public enum Unit {
     FEET(12.0),
     YARD(36.0),
     CM(0.4),
-    // 1Litre=1000ml,1gallon=3780ml
-    MILLILITRE(1),
-    LITRE(1000),
-    GALLON(3780);
+
+    MILLILITRE(0.001),
+    LITRE(1.0),
+    GALLON(3.79);
 
     public double baseUnitConversion;
 
