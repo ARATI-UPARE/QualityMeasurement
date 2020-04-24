@@ -217,9 +217,17 @@ public class QuantityTest {
     // Tc:6.1
     @Test
     public void given1GallonAnd3Point78Litre_whenAdded_shouldReturnSumEqualTo() {
-        Length gallon = new Length(Unit.GALLON, 1);
-        Length litre = new Length(Unit.LITRE, 3.78);
+        Volume gallon = new Volume(Unit.GALLON, 1);
+        Volume litre = new Volume(Unit.LITRE, 3.78);
         double sum = gallon.add(litre);
         Assert.assertEquals(7.57, sum, 0.0);
+    }
+    // Tc:6.2
+    @Test
+    public void given1LitreAnd1000Ml_whenAdded_shouldReturnSumEqualTo() {
+        Volume litre = new Volume(Unit.LITRE, 1);
+        Volume milliLitre = new Volume(Unit.MILLILITRE, 1000);
+        double sum = litre.add(milliLitre);
+        Assert.assertEquals(2, sum, 0.0);
     }
  }
