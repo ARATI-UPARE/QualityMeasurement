@@ -72,7 +72,7 @@ public class QuantityTest {
     }
     //TC:1.11
     @Test
-    public void given0InchAnd0Feet_shouldReturnEqual() {
+    public void given0InchAnd0Feet_shouldReturnEqual() throws QuantityException {
         Quantity feet = new Quantity(Unit.FEET,0.0);
         Quantity inch = new Quantity(Unit.INCH,0.0);
         boolean compareCheck = feet.compare(inch);
@@ -80,7 +80,7 @@ public class QuantityTest {
     }
     //TC:1.12
     @Test
-    public void given1FeetAnd1Inch_shouldReturnNotEqual() {
+    public void given1FeetAnd1Inch_shouldReturnNotEqual() throws QuantityException {
         Quantity inch = new Quantity(Unit.INCH, 1.0);
         Quantity feet = new Quantity(Unit.FEET, 1.0);
         boolean compareCheck = feet.compare(inch);
@@ -88,7 +88,7 @@ public class QuantityTest {
     }
     //TC:1.13
     @Test
-    public void given1InchAnd1Feet_shouldReturnNotEqual() {
+    public void given1InchAnd1Feet_shouldReturnNotEqual() throws QuantityException {
         Quantity inch = new Quantity(Unit.INCH, 1.0);
         Quantity feet = new Quantity(Unit.FEET, 1.0);
         boolean compareCheck = inch.compare(feet);
@@ -96,7 +96,7 @@ public class QuantityTest {
     }
     //TC:1.14
     @Test
-    public void given1FeetAnd12Inch_shouldReturnEqual() {
+    public void given1FeetAnd12Inch_shouldReturnEqual() throws QuantityException {
         Quantity inch = new Quantity(Unit.INCH, 12.0);
         Quantity feet = new Quantity(Unit.FEET, 1.0);
         boolean compareCheck = inch.compare(feet);
@@ -104,7 +104,7 @@ public class QuantityTest {
     }
     //TC:1.15
     @Test
-    public void given12InchAnd1Feet_shouldReturnEqual() {
+    public void given12InchAnd1Feet_shouldReturnEqual() throws QuantityException {
         Quantity inch = new Quantity(Unit.INCH, 12.0);
         Quantity feet = new Quantity(Unit.FEET, 1.0);
         boolean compareCheck = feet.compare(inch);
@@ -112,7 +112,7 @@ public class QuantityTest {
     }
     //TC:2.1
     @Test
-    public void given3FeetAnd1Yard_shouldReturnEqual() {
+    public void given3FeetAnd1Yard_shouldReturnEqual() throws QuantityException {
         Quantity yard = new Quantity(Unit.YARD, 1.0);
         Quantity feet = new Quantity(Unit.FEET, 3.0);
         boolean compareCheck = yard.compare(feet);
@@ -120,7 +120,7 @@ public class QuantityTest {
     }
     //TC:2.2
     @Test
-    public void given1FeetAnd1Yard_shouldReturnNotEqual() {
+    public void given1FeetAnd1Yard_shouldReturnNotEqual() throws QuantityException {
         Quantity yard = new Quantity(Unit.YARD, 1.0);
         Quantity feet = new Quantity(Unit.FEET, 1.0);
         boolean compareCheck = yard.compare(feet);
@@ -128,7 +128,7 @@ public class QuantityTest {
     }
     //TC:2.3
     @Test
-    public void given1InchAnd1Yard_shouldReturnNotEqual() {
+    public void given1InchAnd1Yard_shouldReturnNotEqual() throws QuantityException {
         Quantity yard = new Quantity(Unit.YARD, 1.0);
         Quantity inch = new Quantity(Unit.INCH, 1.0);
         boolean compareCheck = yard.compare(inch);
@@ -136,7 +136,7 @@ public class QuantityTest {
     }
     //TC:2.4
     @Test
-    public void given1YardAnd36Inch_shouldReturnEqual() {
+    public void given1YardAnd36Inch_shouldReturnEqual() throws QuantityException {
         Quantity yard = new Quantity(Unit.YARD, 1.0);
         Quantity inch = new Quantity(Unit.INCH, 36.0);
         boolean compareCheck = yard.compare(inch);
@@ -144,7 +144,7 @@ public class QuantityTest {
     }
     //TC:2.5
     @Test
-    public void given36InchAnd1Yard_shouldReturnEqual() {
+    public void given36InchAnd1Yard_shouldReturnEqual() throws QuantityException {
         Quantity yard = new Quantity(Unit.YARD, 1.0);
         Quantity inch = new Quantity(Unit.INCH, 36.0);
         boolean compareCheck = inch.compare(yard);
@@ -152,7 +152,7 @@ public class QuantityTest {
     }
     //TC:2.6
     @Test
-    public void given1YardAnd3Feet_shouldReturnEqual() {
+    public void given1YardAnd3Feet_shouldReturnEqual() throws QuantityException {
         Quantity yard = new Quantity(Unit.YARD, 1.0);
         Quantity feet = new Quantity(Unit.FEET, 3.0);
         boolean compareCheck = yard.compare(feet);
@@ -160,7 +160,7 @@ public class QuantityTest {
     }
     // TC:3
     @Test
-    public void given2InchAnd5CM_shouldReturnEqual() {
+    public void given2InchAnd5CM_shouldReturnEqual() throws QuantityException {
         Quantity cm = new Quantity(Unit.CM, 5.0);
         Quantity inch = new Quantity(Unit.INCH, 2.0);
         boolean compareCheck = inch.compare(cm);
@@ -200,7 +200,7 @@ public class QuantityTest {
     }
     // TC:5.1
     @Test
-    public void given1GallonAnd3Point78litres_whenCompared_shouldRetunEqual() {
+    public void given1GallonAnd3Point78litres_whenCompared_shouldRetunEqual() throws QuantityException {
         Quantity gallon = new Quantity(Unit.GALLON, 1.0);
         Quantity litre = new Quantity(Unit.LITRE, 3.78);
         boolean compareCheck = gallon.compare(litre);
@@ -208,7 +208,7 @@ public class QuantityTest {
     }
     // TC:5.2
     @Test
-    public void given1LitreAnd1000MiliLitres_shouldRetunEqual() {
+    public void given1LitreAnd1000MiliLitres_shouldRetunEqual() throws QuantityException {
         Quantity litre = new Quantity(Unit.LITRE, 1.0);
         Quantity milliLitre = new Quantity(Unit.MILLILITRE, 1000.0);
         boolean compareCheck = litre.compare(milliLitre);
@@ -232,7 +232,7 @@ public class QuantityTest {
     }
     //TC:7.1
     @Test
-    public void given1KgAnd1000Grams_whenCompared_shouldReturnEqual() {
+    public void given1KgAnd1000Grams_whenCompared_shouldReturnEqual() throws QuantityException {
         Quantity kg = new Quantity(Unit.KG, 1.0);
         Quantity gram = new Quantity(Unit.GRAM, 1000.0);
         boolean compareCheck = kg.compare(gram);
@@ -240,7 +240,7 @@ public class QuantityTest {
     }
     //TC:7.2
     @Test
-    public void given1TonneAnd1000Kgs_whenCompared_shouldReturnEqual() {
+    public void given1TonneAnd1000Kgs_whenCompared_shouldReturnEqual() throws QuantityException {
         Quantity tonne = new Quantity(Unit.TONNE, 1.0);
         Quantity kg = new Quantity(Unit.KG, 1000.0);
         boolean compareCheck = tonne.compare(kg);
@@ -256,10 +256,22 @@ public class QuantityTest {
     }
     // TC:8
     @Test
-    public void given212FahrenheitAnd100Celsius_shouldReturnEqual() {
+    public void given212FahrenheitAnd100Celsius_shouldReturnEqual() throws QuantityException {
         Quantity fahrenheit = new Quantity(Unit.FAHRENHEIT, 212.0);
         Quantity celsius = new Quantity(Unit.CELSIUS, 100.0);
         boolean compareCheck = fahrenheit.compare(celsius);
         Assert.assertTrue(compareCheck);
+    }
+
+    @Test
+    // TC: Exception to Handle Negative Value
+    public void givenNegativeQuantityForLength_shouldThrowException() throws QuantityException{
+        try {
+            Quantity length1 = new Quantity(Unit.FEET, -5.0);
+            Quantity length2 = new Quantity(Unit.FEET, -5.0);
+            boolean compareCheck = length1.compare(length2);
+        } catch (QuantityException e){
+            Assert.assertEquals(QuantityException.ExceptionType.NAGATIVE_VALUE, e.type);
+        }
     }
  }

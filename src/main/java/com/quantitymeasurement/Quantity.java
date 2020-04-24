@@ -10,8 +10,15 @@ public class Quantity {
         this.value = value;
     }
     // Method To Comapre Two Input Quantities
-    public boolean compare(Quantity that){
-        boolean compareCheck = unit.compare(this,that);
+    public boolean compare(Quantity that)throws QuantityException{
+        try{
+            if( value < 0.0 ){
+                throw new QuantityException(QuantityException.ExceptionType.NAGATIVE_VALUE,"Negative Quantity Not Allowed");
+            }
+        }catch (QuantityException e ){
+            e.printStackTrace();
+        }
+        boolean compareCheck = unit.compare(this, that);
         return compareCheck;
     }
     // Method To Add Two Input Quantities.
