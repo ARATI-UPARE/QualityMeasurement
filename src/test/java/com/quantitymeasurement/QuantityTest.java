@@ -309,4 +309,15 @@ public class QuantityTest {
         boolean compareCheck = fahrenheit.compare(celsius);
         Assert.assertTrue(compareCheck);
     }
+    @Test
+    // TC: Exception to Prevent Addition of Temperature.
+    public void given212FahrenheitAnd100Celsius_whenAdded_shouldThrowException() throws QuantityException {
+        try {
+            Quantity fahrenheit = new Quantity(Unit.FAHRENHEIT, 212.0);
+            Quantity celsius = new Quantity(Unit.CELSIUS, 100.0);
+            double sum = fahrenheit.add(celsius);
+        } catch (QuantityException e) {
+            Assert.assertEquals(QuantityException.ExceptionType.NEGATIVE_TEMPERATURE, e.type);
+        }
+    }
  }
