@@ -13,6 +13,10 @@ public class Volume {
         boolean compareCheck = unit.compare(this, volume);
         return compareCheck;
     }
+    public double add(Volume volume) {
+        double sum = unit.add(this,volume);
+        return sum;
+    }
 
     @Override
     public boolean equals(Object obj) {

@@ -32,4 +32,8 @@ public enum Unit {
         return length1.value * length1.unit.baseUnitConversion +
                 length2.value * length2.unit.baseUnitConversion;
     }
+    public double add(Volume v1, Volume v2) {
+        return v1.value * v1.unit.baseUnitConversion +
+                v2.value * v2.unit.baseUnitConversion;
+    }
 }
