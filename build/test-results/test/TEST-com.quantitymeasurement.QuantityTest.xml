@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.quantitymeasurement.QuantityTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2020-04-24T05:28:16" hostname="DESKTOP-DKJKMVK" time="0.003">
+<testsuite name="com.quantitymeasurement.QuantityTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2020-04-24T05:34:03" hostname="DESKTOP-DKJKMVK" time="0.003">
   <properties/>
-  <testcase name="given2InchAnd2Inch_whenAdded_shouldReturnSum" classname="com.quantitymeasurement.QuantityTest" time="0.003"/>
+  <testcase name="given1FeetAnd2Inch_whenAdded_shouldReturnSum" classname="com.quantitymeasurement.QuantityTest" time="0.003"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>
