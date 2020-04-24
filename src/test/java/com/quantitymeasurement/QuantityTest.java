@@ -222,7 +222,7 @@ public class QuantityTest {
         double sum = gallon.add(litre);
         Assert.assertEquals(7.57, sum, 0.1);
     }
-    // Tc:6.2
+    // TC:6.2
     @Test
     public void given1LitreAnd1000Ml_whenAdded_shouldReturnSumEqualTo() {
         Volume litre = new Volume(Unit.LITRE, 1);
