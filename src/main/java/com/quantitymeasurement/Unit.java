@@ -9,7 +9,10 @@ public enum Unit {
 
     MILLILITRE(0.001),
     LITRE(1.0),
-    GALLON(3.79);
+    GALLON(3.79),
+
+    GRAM(1),
+    KG(1000);
 
     public double baseUnitConversion;
 
@@ -35,5 +38,13 @@ public enum Unit {
     public double add(Volume v1, Volume v2) {
         return v1.value * v1.unit.baseUnitConversion +
                 v2.value * v2.unit.baseUnitConversion;
+    }
+    public boolean compare(Weight weight1, Weight weight2) {
+        return Double.compare(weight1.value * weight1.unit.baseUnitConversion,
+                weight2.value * weight2.unit.baseUnitConversion) == 0;
+    }
+    public double add(Weight weight1, Weight weight2) {
+        return weight1.value * weight1.unit.baseUnitConversion +
+                weight2.value * weight2.unit.baseUnitConversion;
     }
 }
