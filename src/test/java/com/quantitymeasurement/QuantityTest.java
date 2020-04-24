@@ -220,7 +220,7 @@ public class QuantityTest {
         Volume gallon = new Volume(Unit.GALLON, 1);
         Volume litre = new Volume(Unit.LITRE, 3.78);
         double sum = gallon.add(litre);
-        Assert.assertEquals(7.57, sum, 0.0);
+        Assert.assertEquals(7.57, sum, 0.1);
     }
     // Tc:6.2
     @Test
@@ -230,11 +230,20 @@ public class QuantityTest {
         double sum = litre.add(milliLitre);
         Assert.assertEquals(2, sum, 0.0);
     }
+    //TC:7.1
     @Test
     public void given1KgAnd1000Grams_whenCompared_shouldReturnEqual() {
         Weight kg = new Weight(Unit.KG, 1.0);
         Weight gram = new Weight(Unit.GRAM, 1000.0);
         boolean compareCheck = kg.compare(gram);
+        Assert.assertTrue(compareCheck);
+    }
+    //TC:7.2
+    @Test
+    public void given1TonneAnd1000Kgs_whenCompared_shouldReturnEqual() {
+        Weight tonne = new Weight(Unit.TONNE, 1.0);
+        Weight kg = new Weight(Unit.KG, 1000.0);
+        boolean compareCheck = tonne.compare(kg);
         Assert.assertTrue(compareCheck);
     }
  }

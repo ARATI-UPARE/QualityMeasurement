@@ -9,10 +9,11 @@ public enum Unit {
 
     MILLILITRE(0.001),
     LITRE(1.0),
-    GALLON(3.79),
+    GALLON(3.78),
 
     GRAM(1),
-    KG(1000);
+    KG(1000),
+    TONNE(1000000);
 
     public double baseUnitConversion;
 
