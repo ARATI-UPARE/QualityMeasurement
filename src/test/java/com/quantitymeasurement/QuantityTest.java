@@ -230,4 +230,11 @@ public class QuantityTest {
         double sum = litre.add(milliLitre);
         Assert.assertEquals(2, sum, 0.0);
     }
+    @Test
+    public void given1KgAnd1000Grams_whenCompared_shouldReturnEqual() {
+        Weight kg = new Weight(Unit.KG, 1.0);
+        Weight gram = new Weight(Unit.GRAM, 1000.0);
+        boolean compareCheck = kg.compare(gram);
+        Assert.assertTrue(compareCheck);
+    }
  }
