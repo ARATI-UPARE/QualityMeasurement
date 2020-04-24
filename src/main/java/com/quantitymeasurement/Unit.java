@@ -21,31 +21,14 @@ public enum Unit {
         this.baseUnitConversion=baseUnitConversion;
     }
 
-    // Method To Comapare length
-    public boolean compare(Length l1,Length l2) {
-        return Double.compare(l1.value * l1.unit.baseUnitConversion,
-                              l2.value * l2.unit.baseUnitConversion) == 0;
-    }
-    // Method To Compare Volume
-    public boolean compare(Volume v1, Volume v2){
-        return Double.compare(v1.value * v1.unit.baseUnitConversion,
-                v2.value * v2.unit.baseUnitConversion) == 0;
+    // Method To Comapare Two Quantities
+    public boolean compare(Quantity quantity1, Quantity quantity2) {
+        return Double.compare(quantity1.value * quantity1.unit.baseUnitConversion,
+                quantity2.value * quantity2.unit.baseUnitConversion) == 0;
     }
     // Method To Add Two Length
-    public double add(Length length1, Length length2) {
-        return length1.value * length1.unit.baseUnitConversion +
-                length2.value * length2.unit.baseUnitConversion;
-    }
-    public double add(Volume v1, Volume v2) {
-        return v1.value * v1.unit.baseUnitConversion +
-                v2.value * v2.unit.baseUnitConversion;
-    }
-    public boolean compare(Weight weight1, Weight weight2) {
-        return Double.compare(weight1.value * weight1.unit.baseUnitConversion,
-                weight2.value * weight2.unit.baseUnitConversion) == 0;
-    }
-    public double add(Weight weight1, Weight weight2) {
-        return weight1.value * weight1.unit.baseUnitConversion +
-                weight2.value * weight2.unit.baseUnitConversion;
+    public double add(Quantity quantity1, Quantity quantity2) {
+        return quantity1.value * quantity1.unit.baseUnitConversion +
+                quantity2.value * quantity2.unit.baseUnitConversion;
     }
 }
