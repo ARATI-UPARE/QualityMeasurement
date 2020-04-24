@@ -246,4 +246,11 @@ public class QuantityTest {
         boolean compareCheck = tonne.compare(kg);
         Assert.assertTrue(compareCheck);
     }
+    @Test
+    public void given1TonneAnd1000Grams_whenAdded_shouldReturnSumEqualTo() {
+        Weight tonne = new Weight(Unit.TONNE, 1);
+        Weight grams = new Weight(Unit.GRAM, 1000);
+        double sum = tonne.add(grams);
+        Assert.assertEquals(1001, sum, 0.0);
+    }
  }
