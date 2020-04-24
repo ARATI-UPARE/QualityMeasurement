@@ -6,32 +6,32 @@ public class QuantityTest {
 
     // TC:1.1
     @Test
-    public void givenOf0FeetAnd0Feet_ShouldReturnEqual() {
+    public void givenOf0FeetAnd0Feet_ShouldReturnEqual() throws QuantityException {
         Quantity feet1=new Quantity(Unit.FEET,0.0);
         Quantity feet2=new Quantity(Unit.FEET,0.0);
         Assert.assertEquals(feet1,feet2);
     }
     // TC:1.2
     @Test
-    public void givenOf1NullFeetObject_ShouldReturnNotEqual() {
+    public void givenOf1NullFeetObject_ShouldReturnNotEqual() throws QuantityException {
         Quantity feet=new Quantity(Unit.FEET,0.0);
         Assert.assertNotEquals(feet,null);
     }
     // TC:1.3
     @Test
-    public void givenOfReferencefeetAndFeet_ShouldReturnEqual() {
+    public void givenOfReferencefeetAndFeet_ShouldReturnEqual() throws QuantityException {
         Quantity feet=new Quantity(Unit.FEET,0.0);
         Assert.assertEquals(feet,feet);
     }
     //TC:1.4
     @Test
-    public void givenStringAndFeet_whenDifferentType_shouldReturnNotEqual() {
+    public void givenStringAndFeet_whenDifferentType_shouldReturnNotEqual() throws QuantityException {
         Quantity feet = new Quantity(Unit.FEET,0.0);
         Assert.assertNotEquals(feet, "Type");
     }
     //TC:1.5
     @Test
-    public void givenOf0FeetAnd1Feet_whenDifferentValues_ShouldreturnNotEqual() {
+    public void givenOf0FeetAnd1Feet_whenDifferentValues_ShouldreturnNotEqual() throws QuantityException {
         Quantity feet1 = new Quantity(Unit.FEET,0.0);
         Quantity feet2 = new Quantity(Unit.FEET,1.0);
         Assert.assertNotEquals(feet1,feet2);
@@ -39,33 +39,33 @@ public class QuantityTest {
 
     // TC:1.6
     @Test
-    public void givenOf0InchAnd0Inch_ShouldReturnEqual() {
+    public void givenOf0InchAnd0Inch_ShouldReturnEqual() throws QuantityException {
         Quantity inch1 = new Quantity(Unit.INCH,0.0);
         Quantity inch2 = new Quantity(Unit.INCH,0.0);
         Assert.assertEquals(inch1,inch2);
     }
     // TC:1.7
     @Test
-    public void givenOf1NullInchObject_ShouldReturnNotEqual() {
+    public void givenOf1NullInchObject_ShouldReturnNotEqual() throws QuantityException {
         Quantity inch = new Quantity(Unit.INCH,0.0);
         Assert.assertNotEquals(inch,null);
     }
     // TC:1.8
     @Test
-    public void givenOfReferenceInchAndInch_ShouldReturnEqual() {
+    public void givenOfReferenceInchAndInch_ShouldReturnEqual() throws QuantityException {
         Quantity inch = new Quantity(Unit.INCH,0.0);
         Assert.assertEquals(inch,inch);
     }
     //TC:1.9
     @Test
-    public void givenInchAndFeet_whenDifferentType_shouldReturnNotEqual() {
+    public void givenInchAndFeet_whenDifferentType_shouldReturnNotEqual() throws QuantityException {
         Quantity feet = new Quantity(Unit.FEET,0.0);
         Quantity inch = new Quantity(Unit.INCH,0.0);
         Assert.assertNotEquals(feet, inch);
     }
     //TC:1.10
     @Test
-    public void givenOf0InchAnd1Inch_whenDifferentValues_ShouldreturnNotEqual() {
+    public void givenOf0InchAnd1Inch_whenDifferentValues_ShouldreturnNotEqual() throws QuantityException {
         Quantity inch1 = new Quantity(Unit.INCH,0.0);
         Quantity inch2 = new Quantity(Unit.INCH,1.0);
         Assert.assertNotEquals(inch1,inch2);
@@ -168,7 +168,7 @@ public class QuantityTest {
     }
     // TC:4.1
     @Test
-    public void given2InchAnd2Inch_whenAdded_shouldReturnSum() {
+    public void given2InchAnd2Inch_whenAdded_shouldReturnSum() throws QuantityException {
         Quantity inch1 = new Quantity(Unit.INCH, 2);
         Quantity inch2 = new Quantity(Unit.INCH, 2);
         double sum = inch1.add(inch2);
@@ -176,7 +176,7 @@ public class QuantityTest {
     }
     // TC:4.2
     @Test
-    public void given1FeetAnd2Inch_whenAdded_shouldReturnSum() {
+    public void given1FeetAnd2Inch_whenAdded_shouldReturnSum() throws QuantityException {
         Quantity feet1 = new Quantity(Unit.FEET, 1);
         Quantity inch2 = new Quantity(Unit.INCH, 2);
         double sum = feet1.add(inch2);
@@ -184,7 +184,7 @@ public class QuantityTest {
     }
     // TC:4.3
     @Test
-    public void given1FeetAnd1Feet_whenAdded_shouldReturnSum() {
+    public void given1FeetAnd1Feet_whenAdded_shouldReturnSum() throws QuantityException {
         Quantity feet1 = new Quantity(Unit.FEET, 1);
         Quantity feet2 = new Quantity(Unit.FEET, 1);
         double sum = feet1.add(feet2);
@@ -192,7 +192,7 @@ public class QuantityTest {
     }
     // TC:4.4
     @Test
-    public void given2InchAnd2Point5CM_whenAdded_shouldReturnSum() {
+    public void given2InchAnd2Point5CM_whenAdded_shouldReturnSum() throws QuantityException {
         Quantity inch1 = new Quantity(Unit.INCH, 2.0);
         Quantity cm1 = new Quantity(Unit.CM, 2.5);
         double sum = inch1.add(cm1);
@@ -216,7 +216,7 @@ public class QuantityTest {
     }
     // Tc:6.1
     @Test
-    public void given1GallonAnd3Point78Litre_whenAdded_shouldReturnSumEqualTo() {
+    public void given1GallonAnd3Point78Litre_whenAdded_shouldReturnSumEqualTo() throws QuantityException {
         Quantity gallon = new Quantity(Unit.GALLON, 1);
         Quantity litre = new Quantity(Unit.LITRE, 3.78);
         double sum = gallon.add(litre);
@@ -224,7 +224,7 @@ public class QuantityTest {
     }
     // TC:6.2
     @Test
-    public void given1LitreAnd1000Ml_whenAdded_shouldReturnSumEqualTo() {
+    public void given1LitreAnd1000Ml_whenAdded_shouldReturnSumEqualTo() throws QuantityException {
         Quantity litre = new Quantity(Unit.LITRE, 1);
         Quantity milliLitre = new Quantity(Unit.MILLILITRE, 1000);
         double sum = litre.add(milliLitre);
@@ -248,7 +248,7 @@ public class QuantityTest {
     }
     // TC:7.3
     @Test
-    public void given1TonneAnd1000Grams_whenAdded_shouldReturnSumEqualTo() {
+    public void given1TonneAnd1000Grams_whenAdded_shouldReturnSumEqualTo() throws QuantityException {
         Quantity tonne = new Quantity(Unit.TONNE, 1);
         Quantity grams = new Quantity(Unit.GRAM, 1000);
         double sum = tonne.add(grams);
@@ -264,14 +264,41 @@ public class QuantityTest {
     }
 
     @Test
-    // TC: Exception to Handle Negative Value
+    // TC: Exception to Handle Negative Value For Comparision
     public void givenNegativeQuantityForLength_shouldThrowException() throws QuantityException{
-        try {
             Quantity length1 = new Quantity(Unit.FEET, -5.0);
             Quantity length2 = new Quantity(Unit.FEET, -5.0);
             boolean compareCheck = length1.compare(length2);
-        } catch (QuantityException e){
-            Assert.assertEquals(QuantityException.ExceptionType.NAGATIVE_VALUE, e.type);
+    }
+    @Test
+    // TC: Exception to Handle Negative Value For Addition
+    public void givenNegativeQuantityForLength_whenAdded_shouldThrowException() throws QuantityException{
+        Quantity length1 = new Quantity(Unit.FEET, -5.0);
+        Quantity length2 = new Quantity(Unit.FEET, -5.0);
+        double compareCheck = length1.add(length2);
+    }
+
+    @Test
+    // TC: Exception to Handle Different Quantity Type For Addition
+    public void givenDifferentQuantityTypes_whenAdded_shouldThrowException() throws QuantityException {
+        try {
+            Quantity feet = new Quantity(Unit.FEET, 1.0);
+            Quantity kg = new Quantity(Unit.KG, 1.0);
+            double sum = feet.add(kg);
+        }catch (QuantityException e){
+            Assert.assertEquals(QuantityException.ExceptionType.DIFFERENT_QUANTITY_TYPE, e.type);
+        }
+    }
+
+    @Test
+    // TC: Exception to Handle Different Quantity Type For Comparision
+    public void givenDifferentQuantityTypes_whenCompared_shouldThrowException() throws QuantityException{
+        try {
+            Quantity kg = new Quantity(Unit.KG, 1.0);
+            Quantity litre = new Quantity(Unit.LITRE, 1.0);
+            boolean compareCheck = kg.compare(litre);
+        }catch (QuantityException e){
+            Assert.assertEquals(QuantityException.ExceptionType.DIFFERENT_QUANTITY_TYPE, e.type);
         }
     }
  }

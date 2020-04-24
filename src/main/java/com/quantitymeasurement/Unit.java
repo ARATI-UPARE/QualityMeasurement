@@ -2,39 +2,31 @@ package com.quantitymeasurement;
 
 public enum Unit {
     // BaseUnit Inch For Length
-    INCH(1.0),
-    FEET(12.0),
-    YARD(36.0),
-    CM(0.4),
+    INCH(1.0,"length"),
+    FEET(12.0,"length"),
+    YARD(36.0,"length"),
+    CM(0.4,"length"),
 
     // BaseUnit Litre For Volume
-    MILLILITRE(0.001),
-    LITRE(1.0),
-    GALLON(3.78),
+    MILLILITRE(0.001, "volume"),
+    LITRE(1.0, "volume"),
+    GALLON(3.78, "volume"),
 
     // BaseUnit KG For Mass
-    GRAM(0.001),
-    KG(1),
-    TONNE(1000),
+    GRAM(0.001, "mass"),
+    KG(1, "mass"),
+    TONNE(1000, "mass"),
 
     // BaseUnit Fahrenheit For Temperature
-    FAHRENHEIT(1.0),
-    CELSIUS(2.12);
+    FAHRENHEIT(1.0, "temperature"),
+    CELSIUS(2.12, "temperature");
 
     public double baseUnitConversion;
+    public String quantityType;
 
-    Unit(double baseUnitConversion) {
-        this.baseUnitConversion=baseUnitConversion;
+    Unit(double baseUnitConversion, String quantityType) {
+        this.baseUnitConversion = baseUnitConversion;
+        this.quantityType = quantityType;
     }
 
-    // Method To Comapare Two Quantities
-    public boolean compare(Quantity quantity1, Quantity quantity2) {
-        return Double.compare(quantity1.value * quantity1.unit.baseUnitConversion,
-                quantity2.value * quantity2.unit.baseUnitConversion) == 0;
-    }
-    // Method To Add Two Length
-    public double add(Quantity quantity1, Quantity quantity2) {
-        return quantity1.value * quantity1.unit.baseUnitConversion +
-                quantity2.value * quantity2.unit.baseUnitConversion;
-    }
 }
