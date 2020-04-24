@@ -301,4 +301,12 @@ public class QuantityTest {
             Assert.assertEquals(QuantityException.ExceptionType.DIFFERENT_QUANTITY_TYPE, e.type);
         }
     }
+    @Test
+    // TC: Exception to Handle Negative Temperature Value.
+    public void givenMinus100CelsiusAndMinus212Fahrenheit_whenCompared_shouldReturnEqual() throws QuantityException {
+        Quantity fahrenheit = new Quantity(Unit.FAHRENHEIT, -212.0);
+        Quantity celsius = new Quantity(Unit.CELSIUS, -100.0);
+        boolean compareCheck = fahrenheit.compare(celsius);
+        Assert.assertTrue(compareCheck);
+    }
  }
