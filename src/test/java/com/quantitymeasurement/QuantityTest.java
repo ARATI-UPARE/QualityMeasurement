@@ -166,5 +166,12 @@ public class QuantityTest {
         boolean compareCheck = inch.compare(cm);
         Assert.assertTrue(compareCheck);
     }
+    // TC:4.1
+    @Test
+    public void given2InchAnd2Inch_whenAdded_shouldReturnSum() {
+        Length inch1 = new Length(Unit.INCH, 2);
+        Length inch2 = new Length(Unit.INCH, 2);
+        double sum = inch1.add(inch2);
+        Assert.assertEquals(4.0, sum, 0.0);
+    }
 }
-
