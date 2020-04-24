@@ -198,6 +198,4 @@ public class QuantityTest {
         double sum = inch1.add(cm1);
         Assert.assertEquals(3, sum, 0.0);
     }
-
-
-}
+ }
