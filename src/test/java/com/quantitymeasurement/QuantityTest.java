@@ -246,11 +246,20 @@ public class QuantityTest {
         boolean compareCheck = tonne.compare(kg);
         Assert.assertTrue(compareCheck);
     }
+    // TC:7.3
     @Test
     public void given1TonneAnd1000Grams_whenAdded_shouldReturnSumEqualTo() {
         Quantity tonne = new Quantity(Unit.TONNE, 1);
         Quantity grams = new Quantity(Unit.GRAM, 1000);
         double sum = tonne.add(grams);
         Assert.assertEquals(1001, sum, 0.0);
+    }
+    // TC:8
+    @Test
+    public void given212FahrenheitAnd100Celsius_shouldReturnEqual() {
+        Quantity fahrenheit = new Quantity(Unit.FAHRENHEIT, 212.0);
+        Quantity celsius = new Quantity(Unit.CELSIUS, 100.0);
+        boolean compareCheck = fahrenheit.compare(celsius);
+        Assert.assertTrue(compareCheck);
     }
  }

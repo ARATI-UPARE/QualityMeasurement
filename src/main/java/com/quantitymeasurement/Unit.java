@@ -1,19 +1,25 @@
 package com.quantitymeasurement;
 
 public enum Unit {
-
+    // BaseUnit Inch For Length
     INCH(1.0),
     FEET(12.0),
     YARD(36.0),
     CM(0.4),
 
+    // BaseUnit Litre For Volume
     MILLILITRE(0.001),
     LITRE(1.0),
     GALLON(3.78),
 
+    // BaseUnit KG For Mass
     GRAM(0.001),
     KG(1),
-    TONNE(1000);
+    TONNE(1000),
+
+    // BaseUnit Fahrenheit For Temperature
+    FAHRENHEIT(1.0),
+    CELSIUS(2.12);
 
     public double baseUnitConversion;
 
